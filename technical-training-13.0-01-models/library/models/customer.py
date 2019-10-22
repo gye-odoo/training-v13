@@ -7,4 +7,8 @@ class Customer(models.Model):
     _name = "library.customer"
     
     name = fields.Text(required=True, string="Customer Name")
-    book_id = fields.Many2one("library.book")
+    
+    address = fields.Text()
+    phone = fields.Text()
+    email = fields.Text(required=True, default='')
+    book_ids = fields.Many2many("library.book", readonly=True)

@@ -1,1 +1,4 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+book_full_access,Book Full Access,library.model_library_book,,1,1,1,1
+customer_full_access,Customer Full Access,library.model_library_customer,,1,1,1,1
+author_full_access,Author Full Access,library.model_library_author,,1,1,1,1
