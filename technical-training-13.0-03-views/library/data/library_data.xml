@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="customer_daenerys" model="library.partner">
+    <record id="customer_daenerys" model="res.partner">
         <field name="name">Daenerys Targaryan</field>
         <field name="email">daenerys@targaryan.org</field>
-        <field name="address">Top of the Pyramid, Mereen</field>
+<!--         <field name="address">Top of the Pyramid, Mereen</field> -->
+        <field name="partner_type">customer</field>
     </record>
 
-    <record id="customer_tyrion" model="library.partner">
+    <record id="customer_tyrion" model="res.partner">
         <field name="name">Tyrion Lannister</field>
         <field name="email">tyrion@lannister.org</field>
-        <field name="address">Red keep, King's Landing</field>
+<!--         <field name="address">Red keep, King's Landing</field> -->
+        <field name="partner_type">customer</field>
     </record>
+    
 
-    <record id="author_martin" model="library.partner">
+    <record id="author_martin" model="res.partner">
         <field name="name">George R.R. Martin</field>
         <field name="email">george@got.org</field>
-        <field name="address">Bayonne, New Jersey, United States</field>
+<!--         <field name="address">Bayonne, New Jersey, United States</field> -->
         <field name="partner_type">author</field>
     </record>
 
@@ -25,7 +28,8 @@
         <field name="isbn">0-553-10354-7</field>
     </record>
 
-    <record id="publisher_got" model="library.publisher">
+    <record id="publisher_got" model="res.partner">
         <field name="name">Bantam Spectra</field>
+        <field name="partner_type">publisher</field>
     </record>
 </odoo>

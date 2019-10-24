@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="partner_form" model="ir.ui.view">
+        <field name="name">Partner Form View</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+<!--                         <field name="address"/> -->
+                        <field name="partner_type"/>
+                        <field name="rental_ids" attrs="{'readonly': [('partner_type', '!=', 'customer')]}">
+                            <tree default_order="rental_date desc">
+                                <field name="copy_id"/>
+                                <field name="rental_date"/>
+                                <field name="return_date"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

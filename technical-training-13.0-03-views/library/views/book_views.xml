@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="book_form" model="ir.ui.view">
+        <field name="name">Custom Form View for Book Model</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form string="Book">
+                <group>
+                    <field name="name"/>
+                    <field name="author_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                    <field name="edition_date"/>
+                    <field name="isbn"/>
+<!--                     <field name="copy_ids"/> -->
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <record id="book_search" model="ir.ui.view">
+        <field name="name">Book Search Customization</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <search string="Books Search">
+                <field name="name"/>
+                <field name="isbn"/>
+                <field name="author_ids"/>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="rental_list" model="ir.ui.view">
+        <field name="name">Rental List View</field>
+        <field name="model">library.rental</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="is_late">
+                <field name="is_late" invisible="1"/>
+                <field name="customer_id"/>
+                <field name="copy_id"/>
+                <field name="rental_date"/>
+                <field name="return_date"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="rental_form" model="ir.ui.view">
+        <field name="name">Rental Form View</field>
+        <field name="model">library.rental</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="Customer Information">
+                            <field name="customer_id" domain="[('partner_type', '=', 'customer')]"/>
+<!--                             <field name="customer_address"/> -->
+                            <field name="customer_email"/>
+                        </group>
+                        <group string="Book Information">
+                            <field name="copy_id"/>
+                            <field name="book_authors" widget="many2many_tags"/>
+                            <field name="book_edition_date"/>
+                            <field name="book_publisher"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Rental Information">
+                            <field name="rental_date"/>
+                            <field name="return_date"/>
+                            <field name="is_late"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

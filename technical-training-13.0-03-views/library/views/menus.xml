@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="library_main" name="Library"/>
+    
+    <record id="book_action" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="author_action" model="ir.actions.act_window">
+        <field name="name">Authors Action</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[('partner_type', '=', 'author')]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="customer_action" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[('partner_type', '=', 'customer')]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="publisher_action" model="ir.actions.act_window">
+        <field name="name">Publisher</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[('partner_type', '=', 'publisher')]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="rental_action" model="ir.actions.act_window">
+        <field name="name">Rentals</field>
+        <field name="res_model">library.rental</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="copy_action" model="ir.actions.act_window">
+        <field name="name">Book Copies</field>
+        <field name="res_model">library.book.copy</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="book_menu_action"
+            name="Books"
+            parent="library.library_main"
+            action="library.book_action"
+            sequence="12"
+    />
+    
+    <menuitem id="partners_menu" name="Partners" parent="library_main"/>
+    
+    <menuitem
+              id="author_menu_action"
+              name="Authors"
+              parent="library.partners_menu"
+              action="library.author_action"
+              sequence="10"
+    />
+    
+    <menuitem
+              id="customer_menu_action"
+              name="Customers"
+              parent="library.partners_menu"
+              action="library.customer_action"
+              sequence="11"
+    />
+    <menuitem
+              id="publisher_menu_action"
+              name="Publishers"
+              parent="library.partners_menu"
+              action="library.publisher_action"
+    />
+    
+    <menuitem
+              id="rental_menu_action"
+              name="Rentals"
+              parent="library.library_main"
+              action="library.rental_action"
+              sequence="13"
+    />
+    
+    <menuitem
+              id="copy_menu_action"
+              name="Book Copies"
+              parent="library.library_main"
+              action="library.copy_action"
+    />
+    
+    
+    
+</odoo>
